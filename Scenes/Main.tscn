@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwngxa1lq6don"]
+[gd_scene load_steps=3 format=3 uid="uid://bwngxa1lq6don"]
 
 [ext_resource type="PackedScene" uid="uid://do6if7e5t7xax" path="res://Scenes/Player.tscn" id="1_qvw1a"]
+[ext_resource type="PackedScene" uid="uid://d318dcweesl4t" path="res://Scenes/BoxTest.tscn" id="2_4ywix"]
 
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_qvw1a")]
+move_speed = Vector2(100, 100)
+
+[node name="BoxTest" parent="." instance=ExtResource("2_4ywix")]
+position = Vector2(-177, 69)

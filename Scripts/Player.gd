@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Variables
-@export var move_speed = Vector2(100, 100)
+@export var move_speed = Vector2(300, 300)
 var input_vector = Vector2.ZERO
 var is_input_enabled = true
 
@@ -25,7 +25,7 @@ func _process(delta):
 		var y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		input_vector = Vector2(x, y).normalized()
 
-		# animation code
+		# Animation code
 		if input_vector != Vector2.ZERO:
 			anim_tree.set("parameters/Idle/blend_position", input_vector) #Idle
 			anim_tree.set("parameters/Walk/blend_position", input_vector) #Walk
@@ -35,4 +35,5 @@ func _process(delta):
 		
 		# Movement code
 		position += input_vector * move_speed * delta
+		move_and_slide()
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d318dcweesl4t"]
+
+[ext_resource type="Texture2D" uid="uid://c43a682dn4wy8" path="res://Assets/redbox.png" id="1_ptxtc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlyk"]
+size = Vector2(19.2, 19.2)
+
+[node name="BoxTest" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_ptxtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-06, -2.38419e-06)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_tqlyk")

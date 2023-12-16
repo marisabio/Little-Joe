@@ -55,6 +55,40 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_4xqdv"]
+resource_name = "idle_left"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_kquw4"]
+resource_name = "idle_right"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
 [sub_resource type="Animation" id="Animation_svw43"]
 resource_name = "step_back"
 length = 0.6
@@ -89,10 +123,10 @@ tracks/0/keys = {
 "values": [1, 0, 2, 0]
 }
 
-[sub_resource type="Animation" id="Animation_kquw4"]
-resource_name = "idle_right"
+[sub_resource type="Animation" id="Animation_b1fyd"]
+resource_name = "step_left"
 length = 0.6
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -100,10 +134,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.150974, 0.3, 0.450974),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [6]
+"values": [9, 8, 9, 8]
 }
 
 [sub_resource type="Animation" id="Animation_mwk0w"]
@@ -121,40 +155,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [7, 6, 7, 6]
-}
-
-[sub_resource type="Animation" id="Animation_4xqdv"]
-resource_name = "idle_left"
-length = 0.6
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_b1fyd"]
-resource_name = "step_left"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.150974, 0.3, 0.450974),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [9, 8, 9, 8]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p3rs3"]
@@ -227,6 +227,8 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_xbky5")
 states/Walk/position = Vector2(659, 71)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+motion_mode = 1
 script = ExtResource("1_jh5gp")
 metadata/_edit_group_ = true
 
@@ -253,6 +255,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_0a2k6")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/is_walking = false
 parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0.3024, 0.659389)
