@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://de7ch1k6h3jo2"]
+
+[ext_resource type="Script" path="res://Scripts/InteractionArea.gd" id="1_54thd"]
+
+[node name="InteractionArea" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_54thd")

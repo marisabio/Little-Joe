@@ -1,9 +1,10 @@
 extends CharacterBody2D
+class_name Player
 
 #Variables
-@export var move_speed = Vector2(300, 300)
+@export var move_speed = Vector2(400, 400)
 var input_vector = Vector2.ZERO
-var is_input_enabled = true
+@export var is_input_enabled = true
 
 #Animation
 @onready var anim_tree = $AnimationTree

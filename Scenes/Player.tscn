@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b5ogeoov4ec5x" path="res://Assets/Little Joe Sprites/JoeSpritesheet.png" id="2_tka7u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgenx"]
-radius = 6.0
-height = 20.0
+radius = 6.7
+height = 22.4
 
 [sub_resource type="Animation" id="Animation_ni050"]
 length = 0.001
@@ -238,7 +238,7 @@ texture = ExtResource("2_tka7u")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
+position = Vector2(3, 1)
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_xgenx")
 
