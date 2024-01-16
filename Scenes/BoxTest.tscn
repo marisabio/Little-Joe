@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d318dcweesl4t"]
+[gd_scene load_steps=6 format=3 uid="uid://d318dcweesl4t"]
 
+[ext_resource type="Script" path="res://Scripts/BoxTest.gd" id="1_50cxy"]
 [ext_resource type="Texture2D" uid="uid://c43a682dn4wy8" path="res://Assets/redbox.png" id="1_ptxtc"]
+[ext_resource type="PackedScene" uid="uid://de7ch1k6h3jo2" path="res://Scenes/InteractionArea.tscn" id="3_nn0xe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlyk"]
 size = Vector2(22.6, 22.6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m420d"]
+size = Vector2(195, 195)
+
 [node name="BoxTest" type="StaticBody2D"]
 collision_layer = 2
+script = ExtResource("1_50cxy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -16,3 +22,9 @@ texture = ExtResource("1_ptxtc")
 position = Vector2(-0.500002, 0.500004)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_tqlyk")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_nn0xe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_m420d")

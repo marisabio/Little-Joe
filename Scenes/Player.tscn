@@ -226,7 +226,7 @@ states/Start/position = Vector2(295, 119)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_xbky5")
 states/Walk/position = Vector2(659, 71)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_jh5gp")
@@ -253,6 +253,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p3rs3")
+}
 tree_root = SubResource("AnimationNodeStateMachine_0a2k6")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 1)
